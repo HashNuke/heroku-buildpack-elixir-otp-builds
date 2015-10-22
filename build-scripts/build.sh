@@ -16,11 +16,5 @@ function run_build {
   ls builds/otp
 }
 
-echo "TRAVIS COMMIT: $TRAVIS_COMMIT"
-echo "TRAVIS COMMIT RANGE: $TRAVIS_COMMIT_RANGE"
-
-if [[ $changed_files =~ "otp-versions" ]]; then
-  echo "file changed"
-else
-  echo "file not changed"
-fi
+$OTP_VERSION=$(head -n1 otp-versions)
+run_build $HEROKU_STACK $OTP_VERSION
