@@ -10,7 +10,7 @@ install:
   - sudo apt-get update
   - sudo apt-get install docker-engine
   - pip install awscli
-script: sudo bash build-scripts/build.sh
+script: bash build-scripts/build.sh
 deploy:
   provider: s3
   region: us-east-1
