@@ -2,6 +2,9 @@ function run_build {
   local heroku_stack=$1
   local otp_version=$2
 
+  echo "HEROKU STACK: $heroku_stack"
+  echo "OTP VERSION: $otp_version"
+
   docker build -t otp-build build-scripts -f $heroku_stack.dockerfile
   docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build-${heroku_stack}
 
