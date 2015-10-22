@@ -21,7 +21,6 @@ deploy:
   local-dir: builds/otp
   upload-dir: otp-builds
   acl: public_read
-  condition: $(ls -A builds/otp)
   on:
     repo: HashNuke/heroku-buildpack-elixir-otp-builds
     branch: master
