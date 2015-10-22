@@ -13,6 +13,6 @@ function run_build {
 }
 
 mkdir -p builds/otp
-
 head -n1 otp-versions
+echo "HEROKU STACK is $HEROKU_STACK"
 run_build $HEROKU_STACK $(head -n1 otp-versions)
