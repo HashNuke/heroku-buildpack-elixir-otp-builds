@@ -3,10 +3,6 @@ MAINTAINER Akash Manohar
 
 RUN apt-get update
 
-RUN apt-get install -y --fix-missing python python-distribute
-RUN easy_install pip
-RUN pip install awscli
-
 RUN apt-get install -y curl wget ca-certificates
 RUN apt-get install -y gcc g++
 RUN apt-get install -y make automake autoconf
