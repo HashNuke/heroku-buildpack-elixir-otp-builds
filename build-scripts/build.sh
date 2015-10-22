@@ -11,5 +11,5 @@ function run_build {
 
 mkdir -p builds/otp
 
-$OTP_VERSION=$(head -n1 otp-versions)
+OTP_VERSION=$(head -n1 otp-versions)
 run_build $HEROKU_STACK $OTP_VERSION
