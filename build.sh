@@ -7,8 +7,8 @@ function run_build {
   echo "HEROKU STACK: $heroku_stack"
   echo "OTP VERSION: $otp_version"
 
-  sudo docker build -t otp-build build-scripts -f $heroku_stack.dockerfile
-  sudo docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build-${heroku_stack}
+  sudo docker build -t otp-build build-scripts -f ${heroku_stack}.dockerfile .
+  sudo docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build
 
   sudo docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz otp-builds/OTP-${otp_version}-${heroku_stack}.tar.gz
   ls builds/otp
@@ -16,6 +16,5 @@ function run_build {
 
 mkdir -p builds/otp
 head -n1 otp-versions
-env
-echo "HEROKU STACK is $HEROKU_STACK"
+
 run_build $HEROKU_STACK $(head -n1 otp-versions)
