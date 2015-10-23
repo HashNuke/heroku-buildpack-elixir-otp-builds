@@ -10,10 +10,10 @@ function run_build {
   docker build -t otp-build -f ${heroku_stack}.dockerfile .
   docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build
 
-  docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz builds/otp/OTP-${otp_version}-${heroku_stack}.tar.gz
+  docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz builds/otp/${heroku_stack}/OTP-${otp_version}.tar.gz
 
   ls builds/otp
 }
 
-mkdir -p builds/otp
+mkdir -p builds/otp/$HEROKU_STACK
 run_build $HEROKU_STACK $(head -n1 otp-versions)
