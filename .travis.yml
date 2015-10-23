@@ -15,6 +15,8 @@ script: bash build.sh
 deploy:
   skip_cleanup: true
   provider: s3
+  edge:
+    branch: s3-backward-compat
   access_key_id: AKIAI3U3FZ7PNMN5TRGA
   secret_access_key:
     secure: tYton3bTx8taneGKp+EmYsaCwSUqA8rr0GTMibj4WvYCC1yUziQyZT7pMfQK5iDSndTMAg85YV1guqmcL6wouKWrT72dvIl5i107vWFVCMiLEeDCtvPXxUJZ0Th8WqqaFtIcCeTIrFaRi4JcgzT85YryvOh/moCMkmmlb9pBydM=
