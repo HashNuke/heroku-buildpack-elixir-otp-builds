@@ -13,6 +13,7 @@ install: true
 script: bash build.sh
 
 deploy:
+  skip_cleanup: true
   provider: s3
   region: us-east-1
   access_key_id: AKIAI3U3FZ7PNMN5TRGA
