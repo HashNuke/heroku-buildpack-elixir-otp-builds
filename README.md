@@ -12,5 +12,3 @@ The [Heroku Elixir Buildpack](http://github.com/HashNuke/heroku-buildpack-elixir
 Just add the new version to the top of the `otp-versions` file. Cannot add multiple versions in one commit. The build scripts only build the top most version listed in the file.
 
 
-
-
