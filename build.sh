@@ -7,13 +7,14 @@ function run_build {
   echo "HEROKU STACK: $heroku_stack"
   echo "OTP VERSION: $otp_version"
 
-  docker build -t otp-build -f ${heroku_stack}.dockerfile .
-  docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build
+  #docker build -t otp-build -f ${heroku_stack}.dockerfile .
+  #docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build
 
-  docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz builds/otp/OTP-${otp_version}-${heroku_stack}.tar.gz
+  #docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz builds/otp/OTP-${otp_version}-${heroku_stack}.tar.gz
   pwd
+
+  touch builds/otp/tryout.txt
   ls builds/otp
-  ls $TRAVIS_BUILD_DIR/builds/otp
 }
 
 mkdir -p builds/otp
