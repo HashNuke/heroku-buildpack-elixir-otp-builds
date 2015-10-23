@@ -11,7 +11,9 @@ function run_build {
   docker run -t -e OTP_VERSION=$otp_version --name=otp-build-${otp_version}-${heroku_stack} otp-build
 
   docker cp otp-build-${otp_version}-${heroku_stack}:/home/build/out/OTP-${otp_version}.tar.gz builds/otp/OTP-${otp_version}-${heroku_stack}.tar.gz
+  pwd
   ls builds/otp
+  ls $TRAVIS_BUILD_DIR/builds/otp
 }
 
 mkdir -p builds/otp
