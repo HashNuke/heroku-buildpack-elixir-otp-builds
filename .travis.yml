@@ -9,6 +9,11 @@ env:
 services:
   - docker
 
+
+branches:
+  only:
+    - master
+
 install: true
 script: bash build.sh
 deploy:
