@@ -2,7 +2,7 @@ FROM heroku/cedar:14
 MAINTAINER Akash Manohar
 
 RUN apt-get update
-RUN sed -i '/^deb http:\/\/apt\.postgresql\.org\/*/d' /etc/apt/sources.list
+
 RUN apt-get install -y curl wget ca-certificates
 RUN apt-get install -y gcc g++
 RUN apt-get install -y make automake autoconf
